@@ -32,7 +32,7 @@ class BaseController {
     public function hello($name)
     {
         $this->view->set('name', $name);
-        $this->app->render('hello.tpl');
+        $this->app->render('hello.twig');
     }
 
     public function home()
