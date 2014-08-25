@@ -35,4 +35,9 @@ class BaseController {
         $this->app->render('hello.tpl');
     }
 
+    public function home()
+    {
+        $this->app->render('home.twig');
+    }
+
 } 

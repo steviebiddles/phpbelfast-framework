@@ -9,21 +9,18 @@ class PostController extends BaseController{
     {
         $posts = $this->app->postRepo->getAll();
         $this->view->set('posts', $posts);
-        $this->app->render('news/index.tpl');
+        $this->app->render('news/index.twig');
     }
 
     public function item($id)
     {
         $post = $this->app->postRepo->getById($id);
-        if(!$post) {
+        if (!$post) {
             $app->pass();
         } else {
             $this->view->set('post', $post);
-            $this->app->render('news/item.tpl');
+            $this->app->render('news/item.twig');
         }
-
-
     }
-
 
 } 

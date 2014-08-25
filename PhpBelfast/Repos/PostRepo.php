@@ -1,16 +1,18 @@
 <?php
 namespace PhpBelfast\Repos;
-use RedBean_Facade as R;
+
+use PhpBelfast\Models\Post;
+
 class PostRepo {
 
     public function getAll()
     {
-        return R::findAll('post', 'ORDER BY date DESC');
+        return Post::orderBy('created_at','DESC')->get();
     }
 
     public function getById($id)
     {
-        $post = R::load('post', $id);
+        $post = Post::find($id);
         if(empty($post->id)) {
             return false;
         } else {
