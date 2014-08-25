@@ -1,24 +1,21 @@
 PHPBelfast demo framework
 =========================
 
-This is the framework produced live on 10/04/2014 by Andy Graham at PHPBelfast Meetup #5
+This is the framework produced live on 21/08/2014 by Andy Graham at PHPBelfast Meetup #7
 
 
 Instructions
 ============
 
-Clone the repository into a folder and run `composer install`.  This will get the dependencies for you and you should be ready to rock.
+Ensure you have installed Virtualbox (http://virtualbox.org) and Vagrant (http://vagrantup.com)
 
-Database connection details are in the setup.php, edit the line to fit your config
-`R::setup("mysql:host=localhost;dbname=<database>", '<username>', '<password>');`
+Clone the repository into a folder, enter the folder and at the command line run `vagrant up`
 
-Remember to execute the `seeder.php` file in the root folder to give yourself some sample content.
+Go and have a cup of coffee, in about 5 or 10 mins you should be able to browse to:
+http://phpbelfast.192.168.22.10.xip.io
+and see what we achieved.
 
-To run the built-in PHP server (PHP v5.4+ only) use `php -S localhost:8000 -t <path-to-public-folder>`
-
-Simply go to http://localhost:8000/posts to see it in action.
-
-I've added a .htaccess file for putting the site on an apache based server.  
+NOTE: Since the meetup I have added a `vagrant-install.sh` script.  This is executed automatically at the end of the Vagrantfile.  It creates the database, installs composer packages and seeds the database, so you don't have to.  Have a read of the script to make sure you understand what it does.
 
 For more help see the docs at:
 
@@ -26,9 +23,9 @@ SlimFramework - http://docs.slimframework.com/ and https://github.com/codeguy/Sl
 
 Slim Views - https://github.com/codeguy/Slim-Views
 
-Smarty - http://www.smarty.net/
+Twig - http://twig.sensiolabs.org
 
-RedbeanPHP - http://redbeanphp.com/
+Eloquent - http://laravel.com/docs/eloquent
 
 Faker - https://github.com/fzaninotto/Faker
 
