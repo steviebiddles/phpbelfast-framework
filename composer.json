@@ -1,10 +1,11 @@
 {
     "require": {
         "slim/slim": "2.*",
-        "slim/views": "*",
-        "4nd/smarty": "3.*",
-        "gabordemooij/redbean": "*",
-        "fzaninotto/faker": "*"
+        "slim/views": "0.1.*",
+        "fzaninotto/faker": "1.*",
+        "twig/twig": "1.*",
+        "twig/extensions": "1.*",
+        "illuminate/database": "4.2.*"
     },
     "autoload": {
         "psr-4": {
