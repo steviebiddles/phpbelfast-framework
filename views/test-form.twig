@@ -1,0 +1,19 @@
+{% extends "layout.twig" %}
+{% block header %}
+    TEST FORM
+{% endblock%}
+{% block content %}
+    {% autoescape false %}
+    {{ formBuilder.open() }}
+    {{ formBuilder.token() }}
+    {{ formBuilder.text('First Name', 'first_name') }}
+    {{ formBuilder.text('Last Name', 'last_name') }}
+    {{ formBuilder.text('Date of Birth', 'date_of_birth') }}
+    {{ formBuilder.email('Email', 'email') }}
+    {{ formBuilder.password('Password', 'password') }}
+    {{ formBuilder.submit('Submit') }}
+    {{ formBuilder.close() }}
+    {% endautoescape %}
+{% endblock %}
+
+

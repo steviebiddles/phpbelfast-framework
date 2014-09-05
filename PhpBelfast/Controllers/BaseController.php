@@ -23,6 +23,16 @@ class BaseController {
     {
         $this->app = Slim::getInstance();
         $this->view = $this->app->view();
+        $this->view->set('formBuilder', $this->app->formBuilder);
+    }
+
+
+    public function redirectBackWithFlash($messages = [])
+    {
+        foreach($messages as $key=>$message) {
+            $this->app->flash($key,$message);
+        }
+        $this->app->redirect($this->app->request()->headers('Referer'));
     }
 
 

@@ -4,6 +4,12 @@ $app->get('/', '\PhpBelfast\Controllers\BaseController:home')
 
 $app->get('/hello/:name', '\PhpBelfast\Controllers\BaseController:hello');
 
+
+$app->get('/testform', '\PhpBelfast\Controllers\TestFormController:index');
+$app->post('/testform', '\PhpBelfast\Controllers\TestFormController:store')
+    ->name('testform');
+
+
 $app->group('/posts', function() use ($app){
 
     $app->get('/','\PhpBelfast\Controllers\PostController:index')
