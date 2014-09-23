@@ -19,3 +19,10 @@ $app->container->set('postRepo', function(){
    return new \PhpBelfast\Repos\PostRepo();
 });
 
+$app->container->set('urlRepo', function(){
+    return new \PhpBelfast\Repos\UrlRepo();
+});
+
+$app->container->set('convert', function(){
+    return new \PhpBelfast\Utilities\Convert();
+});

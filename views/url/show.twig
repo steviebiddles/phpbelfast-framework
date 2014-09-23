@@ -1,18 +1,27 @@
 {% extends 'layout.twig' %}
 
-{% block header %}URL Shortener{% endblock %}
+{% block header %}Short URLs{% endblock %}
 
 {% block content %}
 
-    <form id="create-form" action="{{ urlFor('url.index') }}" method="post" role="form">
+    <table class="table table-striped">
 
-        <div class="form-group">
-            <label class="sr-only" for="url">URL</label>
-            <input type="url" class="form-control input-lg" name="url" id="url" placeholder="http://phpbelfast.com" required="required">
-        </div>
+        <thead>
+            <tr>
+                <th>URL</th>
+                <th>Short URL</th>
+            </tr>
+        </thead>
 
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <tbody>
+            {% for url in urls %}
+            <tr>
+                <td>{{ url.url|e }}</td>
+                <td>{{ url.short|e }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
 
-    </form>
+    </table>
 
 {% endblock %}

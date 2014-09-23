@@ -14,3 +14,18 @@ $app->group('/posts', function() use ($app){
         ->name('posts.item');
 
 });
+
+$app->group('/url', function() use ($app) {
+
+    $app->get('/', '\PhpBelfast\Controllers\UrlController:index')
+        ->name('url.index');
+
+    $app->post('/', '\PhpBelfast\Controllers\UrlController:store');
+
+    $app->get('/show/', '\PhpBelfast\Controllers\UrlController:show')
+        ->name('url.show');
+
+});
+
+$app->get('/:short', '\PhpBelfast\Controllers\UrlController:check')
+    ->conditions(array('short' => '[a-z0-9]+'));

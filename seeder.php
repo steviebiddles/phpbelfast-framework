@@ -6,6 +6,7 @@ use Illuminate\Database\Capsule\Manager as DB;
 $schema = DB::schema();
 
 $schema->dropIfExists('posts');
+$schema->dropIfExists('urls');
 
 $schema->create('posts', function(\Illuminate\Database\Schema\Blueprint $table){
     $table->bigIncrements('id');
@@ -15,6 +16,12 @@ $schema->create('posts', function(\Illuminate\Database\Schema\Blueprint $table){
     $table->timestamps(); // created_at & updated_at
 });
 
+$schema->create('urls', function(\Illuminate\Database\Schema\Blueprint $table){
+    $table->bigIncrements('id');
+    $table->string('url')->unique();
+    $table->string('short')->unique();
+    $table->timestamps(); // created_at & updated_at
+});
 
 $faker = Faker\Factory::create();
 foreach (range(1, 20) as $idx) {
