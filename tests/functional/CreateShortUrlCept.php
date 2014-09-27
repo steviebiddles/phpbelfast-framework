@@ -1,12 +1,11 @@
 <?php 
-$I = new FunctionalTester($scenario);
+$I = new FunctionalTester\UrlSteps($scenario);
 
 $I->wantTo('create short url and check database');
 
 $I->amOnPage('/url/');
 
-$I->fillField('#url', 'http://phpbelfast.com');
-$I->click('Submit');
+$I->fillForm('#url', 'http://phpbelfast.com', 'Submit');
 
 $I->seeInDatabase('urls', array(
     'id' => 1,
