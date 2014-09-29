@@ -3,7 +3,8 @@ require __DIR__ . '/vendor/autoload.php';
 
 $app = new \Slim\Slim(array(
     'view' => new \Slim\Views\Twig(),
-    'templates.path' => __DIR__ . '/views'
+    'templates.path' => __DIR__ . '/views',
+    'mode' => 'test'
 ));
 $app->view()->parserOptions = array(
     'debug' => true,

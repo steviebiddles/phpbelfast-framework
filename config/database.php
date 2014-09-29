@@ -7,7 +7,7 @@ $settings = [
     'mysql' => [
         'driver' => 'mysql',
         'host' => 'localhost',
-        'database' => 'phpbelfast',
+        'database' => $app->config('mode') == 'test' ? 'phpbelfast_test' : 'phpbelfast',
         'username' => 'root',
         'password' => 'root',
         'charset' => 'utf8',
