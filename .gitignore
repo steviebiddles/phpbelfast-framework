@@ -23,3 +23,5 @@ Thumbs.db
 .idea
 .vagrant
 
+
+tests/_output/*
