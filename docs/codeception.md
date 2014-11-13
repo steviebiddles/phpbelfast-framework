@@ -13,7 +13,8 @@ Duplicate the database using your preferred method adding the suffix '_test' to 
 * Switch the application into test mode within setup.php
 * Start up the virtual machine connect via ssh
 		
-		// run in the terminal
+		// in the terminal
+		cd /vagrant/
 		php codecept.phar run
 		
 Happy Testing
