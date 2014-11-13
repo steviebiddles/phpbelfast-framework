@@ -34,5 +34,8 @@ Enjoy!
 
 Any questions feel free to drop me a tweet @4nd and I'll do my best to help.
 
+## Meetings ##
+
+Meetup #8: [Testing with codeception](docs/codeception.md)
 
 
